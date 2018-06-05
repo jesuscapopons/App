@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>FLIP-FLOP</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="shortcut icon" href="/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
+
+
+    <style>body { background:#fff; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }</style>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
+    <link href="css/jquery_ui_css_1_1_2.css" rel="stylesheet">
+	 
+	 <link href="./datapicker/css/mobipick.css" rel="stylesheet" type="text/css" />
+	 
+	<!--https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css-->
+	
+	
+	 <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.1.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+
+ 
+ 
+  </head>
+  <body >
+
+    <div id="demo" class="container" data-role="page">
+
+
+
+
+<div id="topMenu" style="background:black !important;" data-role="header" data-position="fixed">
+    <a href="#" data-role="button" onclick="" >-</a>
+      <a href="#" data-role="button" onclick="">-</a>
+    <h1>Flip Flop</h1>
+</div><!-- /header -->
+ 
+		<div id="datapicker_control" style="display:none;" data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+		<label for="datapicker" class="ui-input-text">Fecha</label>
+		 		
+			<input  style="width:200px;" name="datapicker" id="datapicker" type="text" />	
+		
+		</div>	
+		
+			
+      <div id="editorContent" class="content" style="overflow-y:scroll;">
+	
+      </div>
+	  <ul id="sortable">
+        
+      </ul>
+	  
+
+
+ <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul id="bottomMenu">
+        <li ><a  href="#" data-icon="gear" class="ui-btn-active ui-state-persist">-</a></li>
+        <li><a  href="#" data-icon="refresh">-</a></li>
+          <li><a href="#" data-icon="check">-</a></li>
+        <li><a href="#" data-icon="check">-</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  
+		 
+<input id="counter" type="hidden" value="0"/>
+
+
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+	
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script> -->
+	<script type="text/javascript" src="./datapicker/js/shCore.js"></script>
+	 
+	<script type="text/javascript" src="./datapicker/js/xdate.js"></script>
+	<script type="text/javascript" src="./datapicker/js/xdate.i18n.js"></script>
+	
+	
+	
+	<script src="js/jquery_1_11.js"></script>
+    <script src="./js/jquery_ui_1_10_3.js"></script>
+    <script src="./js/jquery_ui_touch_punch_0_2_2.js"></script>
+	<script src="./js/jquery.mobile-1.3.1.min.js"></script>
+  	<script src="./js/index.js"></script>
+	<script src="./js/flipflop.js"></script>
+	<script src="./js/imageEditor.js"></script>
+	<script src="./js/role.js"></script>
+	<script type="text/javascript" src="./js/jquery_embedDOCS.js"></script> 
+	<script type="text/javascript" src="./js/jquery_i18n_properties-min-1_0_9.js"></script>
+
+	<script type="text/javascript" src="./datapicker/js/mobipick.js"></script>
+	 <script src="./js/jquery.panzoom.js"></script>
+
+</script>
+<script type="text/javascript"> 
+jQuery.i18n.properties({
+    name:'Messages', //Nombre del fichero
+    path:'i18/', //Carpeta con traducciones
+    mode:'both',  
+    language:'es',   
+    callback: function() {
+		 console.log(msg_hello+' '+msg_world);
+        //Callback, podemos ejecutar código luego de inicializar el plugin.
+    }
+});
+
+ app.initialize();
+ 
+ 
+</script>
+<script type="text/javascript">
+
+		$( document ).on( "pagecreate", "#demo", function() {
+			SyntaxHighlighter.all();
+
+			var picker = $( "#datapicker", this );
+
+			picker.mobipick({
+				locale: "es" 
+			});
+
+			picker.on( "change", function() 
+			{
+					var date = $( this ).val();
+
+					// formato fecha cambiar				
+					var dateObject = $( this ).mobipick( "option", "date" );
+			});
+		});
+		
+		 
+	</script>
+    </body>
+</html>

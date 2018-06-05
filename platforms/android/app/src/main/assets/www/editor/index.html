@@ -1,0 +1,41 @@
+ 
+<section id="pan-when-zoomed">
+     
+      <div class="parent">
+        <div class="panzoom">
+		
+			 <canvas id="sketchpad" height="1024" width="768">
+        </canvas>
+		
+          
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="zoom-in">Zoom In</button>
+        <button class="zoom-out">Zoom Out</button>
+        <input type="range" class="zoom-range">
+        <button class="reset">Reset</button>
+      </div>
+      <script>
+        (function() {
+          var $section = $('#pan-when-zoomed');
+          $section.find('.panzoom').panzoom({
+            $zoomIn: $section.find(".zoom-in"),
+            $zoomOut: $section.find(".zoom-out"),
+            $zoomRange: $section.find(".zoom-range"),
+            $reset: $section.find(".reset"),
+            panOnlyWhenZoomed: true,
+            minScale: 1
+          });
+        })();
+      </script>
+    </section>
+	
+ 
+	
+ <script>
+ImageEditor.init();
+ </script>
+
+ 
+
